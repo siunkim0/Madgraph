@@ -6,11 +6,12 @@ structure (1800+ branches, proper shared counters, correct types).
 Then fills from Delphes where possible; everything else defaults to 0/False.
 
 Usage:
-    rot
-    python3 BDT_MC/scripts/delphes_to_sknano.py
+    python3 scripts/delphes_to_sknano.py \
+        --example path/to/NANOAOD_example.root \
+        --delphes output/ggH_ZZ_4mu/Events/run_01/tag_1_delphes_events.root \
+        --out     output/ggH_ZZ_4mu/nano/NANOAOD_1.root
 
-All paths are baked in (edit the DEFAULTS section below).
-Override any path via command-line flags.
+All three arguments (--example, --delphes, --out) are required.
 """
 from __future__ import annotations
 
@@ -24,12 +25,9 @@ import uproot
 import ROOT
 
 # ========================= DEFAULTS =====================================
-DEF_EXAMPLE = ("/data6/Users/snuintern2/folder/Madgraph/MG5_aMC_v3_5_6/"
-               "example/NANOAOD_1.root")
-DEF_DELPHES = ("/data6/Users/snuintern2/folder/Madgraph/MG5_aMC_v3_5_6/"
-               "BDT_MC/output/ggH_ZZ_4mu/Events/run_01/"
-               "tag_1_delphes_events.root")
-DEF_OUTPUT  = "/data9/Users/snuintern2/SKNano/MC/ggH_ZZ_4mu/NANOAOD_1.root"
+DEF_EXAMPLE = None
+DEF_DELPHES = None
+DEF_OUTPUT  = None
 
 # ========================= CONSTANTS =====================================
 MUON_MASS     = 0.10566   # GeV
@@ -712,11 +710,11 @@ def write_runs_tree(f_out, n_events, sum_weights, f_ex):
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--example", default=DEF_EXAMPLE,
+    p.add_argument("--example", required=True,
                    help="example NanoAOD to clone structure from")
-    p.add_argument("--delphes", default=DEF_DELPHES,
+    p.add_argument("--delphes", required=True,
                    help="Delphes ROOT input file")
-    p.add_argument("--out", default=DEF_OUTPUT,
+    p.add_argument("--out", required=True,
                    help="output NanoAOD-style ROOT file")
     args = p.parse_args()
 

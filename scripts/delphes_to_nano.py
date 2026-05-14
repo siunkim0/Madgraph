@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Convert Delphes ROOT output -> NanoAOD-mimicking flat tree.
 
-Produces a TTree named "Events" with the branches that
-BDT_git/src/skim.py reads:
+Produces a TTree named "Events" with NanoAOD-compatible branches:
 
     run, luminosityBlock, event, genWeight,
     nMuon,
@@ -14,14 +13,13 @@ BDT_git/src/skim.py reads:
     HLT_DoubleMu4_3_LowMass, HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
 
 Delphes lacks dxy/dz/sip3d/looseId/HLT bits, so those are filled with
-benign defaults (0 for IPs, True for ID/triggers). The BDT cuts in
-selection.yaml on these will then pass automatically; if you want them
-to do real work, replace the constants with a more realistic emulation.
+benign defaults (0 for IPs, True for ID/triggers). Downstream analysis
+cuts on these will then pass automatically; if you want them to do real
+work, replace the constants with a more realistic emulation.
 
 Muons inside each event are sorted by pT (matches NanoAOD convention).
 
 Usage:
-    rot                          # activate ROOT (your alias) - needed for PyROOT
     python delphes_to_nano.py \\
         --in  output/ggH_ZZ_4mu/Events/run_01/tag_1_delphes_events.root \\
         --out output/ggH_ZZ_4mu/nano/ggH_ZZ_4mu.root

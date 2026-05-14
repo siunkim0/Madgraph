@@ -1,7 +1,7 @@
 # Launch script for ggH -> ZZ -> 4mu signal generation.
 #
 # Run with (after the `output` step has been done once):
-#   ./bin/mg5_aMC -f BDT_MC/cards/ggH_ZZ_4mu_launch.txt
+#   ./bin/mg5_aMC -f cards/ggH_ZZ_4mu_launch.txt
 #
 # This:
 #   - launches the existing output directory
@@ -9,7 +9,7 @@
 #   - sets 100k events at sqrt(s)=13.6 TeV
 #   - uses the standard CMS Delphes card
 
-launch BDT_MC/output/ggH_ZZ_4mu
+launch output/ggH_ZZ_4mu
 shower=Pythia8
 detector=Delphes
 done

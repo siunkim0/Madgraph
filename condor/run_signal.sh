@@ -2,21 +2,31 @@
 # Condor worker-node wrapper for the ggH -> ZZ -> 4mu MC chain.
 #
 # This is invoked by run_signal.sub via Condor. It runs on a worker node,
-# reading & writing directly to the shared filesystem at /data6 (assumes
-# /data6 is mounted on the execute hosts; tamsa cluster mounts it).
+# reading & writing directly to the shared filesystem (assumes the shared
+# filesystem is mounted on the execute hosts).
 #
-# Arguments: none (paths are hardcoded; intentional, so the Condor log
-#            tells you exactly which run produced which file).
+# Arguments: none (paths are auto-detected from script location).
 
 set -eo pipefail
 
 # --- Environment -------------------------------------------------------
-MG5_ROOT="/data6/Users/snuintern2/folder/Madgraph/MG5_aMC_v3_5_6"
-WORK="${MG5_ROOT}/BDT_MC"
-PROC_DIR="${WORK}/output/ggH_ZZ_4mu"
+# Auto-detect paths from script location
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+PROC_DIR="${REPO_DIR}/output/ggH_ZZ_4mu"
 
-# ROOT from CVMFS (needed for Delphes). Use LCG view directly so we don't
-# depend on the user's ~/.bashrc on the worker node.
+# MG5_ROOT must be set by the user, or mg5_aMC must be on PATH.
+if [[ -n "${MG5_ROOT:-}" ]] && [[ -x "${MG5_ROOT}/bin/mg5_aMC" ]]; then
+    MG5="${MG5_ROOT}/bin/mg5_aMC"
+elif command -v mg5_aMC &>/dev/null; then
+    MG5="$(command -v mg5_aMC)"
+    MG5_ROOT="$(dirname "$(dirname "${MG5}")")"
+else
+    echo "ERROR: MadGraph5 not found. Set MG5_ROOT or add mg5_aMC to PATH." >&2
+    exit 1
+fi
+
+# ROOT from CVMFS (needed for Delphes). Edit this path for your site.
 LCG_SETUP="/cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc11-opt/setup.sh"
 if [[ -r "${LCG_SETUP}" ]]; then
     set +u
@@ -41,7 +51,7 @@ cd "${MG5_ROOT}"
 # --- Step 1: build process dir if missing -----------------------------
 if [[ ! -d "${PROC_DIR}" ]]; then
     echo "[$(date)] [1/3] generating process directory"
-    ./bin/mg5_aMC "${WORK}/cards/ggH_ZZ_4mu_proc.dat"
+    "${MG5}" "${REPO_DIR}/cards/ggH_ZZ_4mu_proc.dat"
 else
     echo "[$(date)] [1/3] process dir exists: ${PROC_DIR}"
 fi
@@ -51,7 +61,7 @@ echo "[$(date)] [2/3] launching event generation (${NCPUS} cores)"
 
 # Build a per-job launch script: same as the interactive one but force
 # multicore run with NCPUS, never cluster mode (we ARE the cluster job).
-JOB_LAUNCH="${WORK}/condor/_launch_$$.txt"
+JOB_LAUNCH="${REPO_DIR}/condor/_launch_$$.txt"
 cat > "${JOB_LAUNCH}" <<EOF
 launch ${PROC_DIR}
 shower=Pythia8
@@ -70,7 +80,7 @@ set delphes_card delphes_card_CMS
 done
 EOF
 
-./bin/mg5_aMC -f "${JOB_LAUNCH}"
+"${MG5}" -f "${JOB_LAUNCH}"
 rm -f "${JOB_LAUNCH}"
 
 # --- Step 3: pick the newest run, convert to NanoAOD-mimic ------------
@@ -83,7 +93,7 @@ NANO_OUT="${PROC_DIR}/nano/ggH_ZZ_4mu_${RUN_TAG}.root"
 mkdir -p "$(dirname "${NANO_OUT}")"
 
 echo "[$(date)] [3/3] converting ${DELPHES_OUT}"
-python3 "${WORK}/scripts/delphes_to_nano.py" \
+python3 "${REPO_DIR}/scripts/delphes_to_nano.py" \
     --in  "${DELPHES_OUT}" \
     --out "${NANO_OUT}" \
     --label 1

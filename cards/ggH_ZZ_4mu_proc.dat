@@ -1,13 +1,12 @@
 # MadGraph5 process card: gg -> H -> ZZ -> 4mu
-# Signal sample for BDT study (matches BDT_git/config/samples.yaml: ggH_ZZ_4l)
 #
 # HEFT model: top-loop integrated out, gg->H tree-level coupling.
 # Forcing the H propagator and ZZ intermediate guarantees H->ZZ->4mu only.
 #
 # Run with:
-#   ./bin/mg5_aMC BDT_MC/cards/ggH_ZZ_4mu_proc.dat
+#   ./bin/mg5_aMC cards/ggH_ZZ_4mu_proc.dat
 
 import model heft
 define p = g u c d s u~ c~ d~ s~ b b~
 generate g g > h > z z, z > mu+ mu-
-output BDT_MC/output/ggH_ZZ_4mu -nojpeg
+output output/ggH_ZZ_4mu -nojpeg

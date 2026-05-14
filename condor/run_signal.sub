@@ -1,26 +1,24 @@
 # HTCondor submit description: ggH -> ZZ -> 4mu MC generation
 #
-# Submit with:
-#   cd /data6/Users/snuintern2/folder/Madgraph/MG5_aMC_v3_5_6
-#   condor_submit BDT_MC/condor/run_signal.sub
+# Submit from the repo root:
+#   condor_submit condor/run_signal.sub
 #
 # Monitor:
 #   condor_q
 #   condor_q -nobatch -hold        # see why jobs are held
-#   tail -f BDT_MC/condor/logs/signal.<ClusterId>.<ProcId>.out
+#   tail -f condor/logs/signal.<ClusterId>.<ProcId>.out
 #
-# The job runs entirely on the shared filesystem (/data6), so no file
-# transfer is needed. /data6 must be mounted on the execute host —
-# tamsa cluster nodes (node-g3..g10) do mount it.
+# The job runs on the shared filesystem, so no file transfer is needed.
+# The shared filesystem must be mounted on the execute host.
 
 universe                = vanilla
-executable              = BDT_MC/condor/run_signal.sh
+executable              = condor/run_signal.sh
 
-# No arguments — the wrapper hardcodes the signal config.
+# No arguments — the wrapper auto-detects paths from its location.
 # (Later, parameterize over sample by adding args + a sample-name flag.)
 arguments               =
 
-# Shared filesystem: do NOT transfer files. Worker reads/writes /data6 directly.
+# Shared filesystem: do NOT transfer files. Worker reads/writes directly.
 should_transfer_files   = NO
 getenv                  = False
 
@@ -30,10 +28,10 @@ request_memory          = 8192
 request_disk            = 4096
 
 # Where logs land. (Paths are relative to the dir you condor_submit from,
-# i.e. the MG5 root, because that's where you run from per the comment above.)
-output                  = BDT_MC/condor/logs/signal.$(ClusterId).$(ProcId).out
-error                   = BDT_MC/condor/logs/signal.$(ClusterId).$(ProcId).err
-log                     = BDT_MC/condor/logs/signal.$(ClusterId).$(ProcId).log
+# i.e. the repo root.)
+output                  = condor/logs/signal.$(ClusterId).$(ProcId).out
+error                   = condor/logs/signal.$(ClusterId).$(ProcId).err
+log                     = condor/logs/signal.$(ClusterId).$(ProcId).log
 
 # Stream output so you can `tail -f` in real time (handy for an ~30 min job).
 stream_output           = True
