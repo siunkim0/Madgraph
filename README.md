@@ -225,7 +225,7 @@ print('m4l mean=%.1f  median=%.1f  GeV (expect ~125)' %
 | `ImportError: ROOT` or `install Delphes` fails | ROOT not on PATH | Source your ROOT setup script |
 | `pythia8_path` warning at MG5 startup | path points at the wrong build | edit `input/mg5_configuration.txt` |
 | `tag_1_delphes_events.root` not produced | shower/detector not enabled | check `cards/ggH_ZZ_4mu_launch.txt` has `shower=Pythia8` and `detector=Delphes` |
-| BDT training crashes on `genWeight` sign | LO sample has all-positive weights | this is fine — `sum_sgn_gw == nevents` |
+| Training crashes on `genWeight` sign | LO sample has all-positive weights | this is fine — `sum_sgn_gw == nevents` |
 | m4l peak not at 125 GeV | wrong Higgs mass or a non-resonant process | check `set mh 125.0` in the launch script and `> h >` in the proc card |
 
 ---

@@ -102,7 +102,7 @@ def convert(in_path: str, out_path: str, label: int = 1,
     lumi   = ak.Array(np.ones(n_evt, dtype=np.uint32))
     event  = ak.Array(np.arange(1, n_evt + 1, dtype=np.uint64))
 
-    # Trigger bits: all True (Delphes has no HLT). The BDT trigger OR will
+    # Trigger bits: all True (Delphes has no HLT). The trigger OR will
     # therefore pass for every event. If you want realistic trigger losses,
     # replace this with a pT/multiplicity emulation.
     trig_true = ak.Array(np.ones(n_evt, dtype=np.bool_))
