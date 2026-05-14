@@ -61,7 +61,7 @@ delphes_path = ./Delphes
 │   ├── ggH_ZZ_4mu_proc.dat                        ← MG5 process card
 │   └── ggH_ZZ_4mu_launch.txt                      ← MG5 launch script (run_card overrides)
 ├── scripts/
-│   └── delphes_to_nano.py                          ← Delphes → NanoAOD converter
+│   └── delphes_to_sknano.py                          ← Delphes → NanoAOD converter
 ├── condor/
 │   ├── run_signal.sh                               ← HTCondor worker-node wrapper
 │   ├── run_signal.sub                              ← HTCondor submit description
@@ -109,7 +109,7 @@ unset PYTHIA8DATA
 ./bin/mg5_aMC -f /path/to/repo/cards/ggH_ZZ_4mu_launch.txt
 
 # (c) Convert Delphes output to NanoAOD format
-python3 /path/to/repo/scripts/delphes_to_nano.py \
+python3 /path/to/repo/scripts/delphes_to_sknano.py \
     --example /path/to/example/NANOAOD.root \
     --delphes output/ggH_ZZ_4mu/Events/run_01/tag_1_delphes_events.root \
     --out     output/ggH_ZZ_4mu/nano/NANOAOD_1.root
@@ -118,7 +118,7 @@ python3 /path/to/repo/scripts/delphes_to_nano.py \
 ### Modifying run parameters
 - **Event count, beam energy, or PDF**: edit `cards/ggH_ZZ_4mu_launch.txt` (`set nevents …`, `set ebeam1 …`).
 - **Physics process**: edit `cards/ggH_ZZ_4mu_proc.dat` and delete `output/ggH_ZZ_4mu/` to force MG5 to regenerate the process directory.
-- **Run numbering**: each launch creates `run_01`, `run_02`, … under `output/ggH_ZZ_4mu/Events/`. The driver reads `run_01` by default; specify an explicit path to `delphes_to_nano.py` for other runs.
+- **Run numbering**: each launch creates `run_01`, `run_02`, … under `output/ggH_ZZ_4mu/Events/`. The driver reads `run_01` by default; specify an explicit path to `delphes_to_sknano.py` for other runs.
 
 ### HTCondor batch submission
 ```bash
@@ -130,7 +130,7 @@ See `condor/README.md` for monitoring and configuration details.
 
 ## Output Tree
 
-The converter (`delphes_to_nano.py`) produces a single `Events` TTree with NanoAOD-compatible branch names:
+The converter (`delphes_to_sknano.py`) produces a single `Events` TTree with NanoAOD-compatible branch names:
 
 | Branch | Type | Source | Notes |
 |--------|------|--------|-------|
