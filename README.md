@@ -3,7 +3,7 @@
 End-to-end pipeline for generating Monte Carlo samples using MadGraph5_aMC@NLO + Pythia8 + Delphes, with conversion to NanoAOD-compatible ROOT files for downstream physics analysis.
 
 ```
-MadGraph5  ─►  Pythia8  ─►  Delphes (CMS)  ─►  delphes_to_nano.py
+MadGraph5  ─►  Pythia8  ─►  Delphes (CMS)  ─►  delphes_to_sknano.py
    LHE        showered        detector-          NanoAOD-
                               level ROOT         style ROOT
 ```
@@ -150,7 +150,7 @@ The converter (`delphes_to_sknano.py`) produces a single `Events` TTree with Nan
 
 ### Constant defaults
 
-Several branches are filled with pass-through defaults because Delphes does not simulate the corresponding detector quantities. This ensures downstream analysis selections do not reject events on variables that cannot be modeled. For a more realistic acceptance, the constants in `scripts/delphes_to_nano.py` can be replaced:
+Several branches are filled with pass-through defaults because Delphes does not simulate the corresponding detector quantities. This ensures downstream analysis selections do not reject events on variables that cannot be modeled. For a more realistic acceptance, the constants in `scripts/delphes_to_sknano.py` can be replaced:
 
 - `Muon_dxy/dz` → Gaussian smearing with σ ~ 50 μm
 - `Muon_sip3d` → |N(0,1)| distribution
@@ -231,7 +231,7 @@ print('m4l mean=%.1f  median=%.1f  GeV (expect ~125)' %
 |------|-------------|
 | `cards/ggH_ZZ_4mu_proc.dat` | MG5 process generation card |
 | `cards/ggH_ZZ_4mu_launch.txt` | Runtime launch script (executed via `./bin/mg5_aMC -f`) |
-| `scripts/delphes_to_nano.py` | Delphes → NanoAOD converter (standalone: `--in / --out`) |
+| `scripts/delphes_to_sknano.py` | Delphes → NanoAOD converter (standalone: `--in / --out`) |
 | `run_signal.sh` | Full-chain driver; skips process generation if `output/` exists |
 | `condor/` | HTCondor batch submission files (see `condor/README.md`) |
 
