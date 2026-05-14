@@ -1,6 +1,6 @@
 # How to make Monte Carlo Sample for CMS analysis using Madgraph
 
-End-to-end pipeline for generating Monte Carlo samples using MadGraph5_aMC@NLO + Pythia8 + Delphes, with conversion to NanoAOD-compatible ROOT files for downstream physics analysis.
+End-to-end pipeline for generating Monte Carlo samples using MadGraph5_aMC@NLO + Pythia8 + Delphes, with conversion to NanoAOD-compatible ROOT files for downstream physics analysis. The example process is H → ZZ → 4μ.
 
 ```
 MadGraph5  ─►  Pythia8  ─►  Delphes (CMS)  ─►  delphes_to_sknano.py
