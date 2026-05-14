@@ -1,0 +1,27 @@
+# Launch script for ggH -> ZZ -> 4mu signal generation.
+#
+# Run with (after the `output` step has been done once):
+#   ./bin/mg5_aMC -f BDT_MC/cards/ggH_ZZ_4mu_launch.txt
+#
+# This:
+#   - launches the existing output directory
+#   - enables shower=Pythia8 and detector=Delphes
+#   - sets 100k events at sqrt(s)=13.6 TeV
+#   - uses the standard CMS Delphes card
+
+launch BDT_MC/output/ggH_ZZ_4mu
+shower=Pythia8
+detector=Delphes
+done
+# run_card edits:
+set nevents 100000
+set ebeam1 6800.0
+set ebeam2 6800.0
+set pdlabel nn23lo1
+set lhaid 230000
+# param_card edits: SM Higgs at mH=125 GeV (HEFT default already 125, but force it)
+set mh 125.0
+set wh auto
+# Use the ready-made CMS Delphes card
+set delphes_card delphes_card_CMS
+done

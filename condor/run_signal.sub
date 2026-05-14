@@ -1,0 +1,51 @@
+# HTCondor submit description: ggH -> ZZ -> 4mu MC generation
+#
+# Submit with:
+#   cd /data6/Users/snuintern2/folder/Madgraph/MG5_aMC_v3_5_6
+#   condor_submit BDT_MC/condor/run_signal.sub
+#
+# Monitor:
+#   condor_q
+#   condor_q -nobatch -hold        # see why jobs are held
+#   tail -f BDT_MC/condor/logs/signal.<ClusterId>.<ProcId>.out
+#
+# The job runs entirely on the shared filesystem (/data6), so no file
+# transfer is needed. /data6 must be mounted on the execute host —
+# tamsa cluster nodes (node-g3..g10) do mount it.
+
+universe                = vanilla
+executable              = BDT_MC/condor/run_signal.sh
+
+# No arguments — the wrapper hardcodes the signal config.
+# (Later, parameterize over sample by adding args + a sample-name flag.)
+arguments               =
+
+# Shared filesystem: do NOT transfer files. Worker reads/writes /data6 directly.
+should_transfer_files   = NO
+getenv                  = False
+
+# Resources: request enough cores for Pythia8 multicore + Delphes.
+request_cpus            = 8
+request_memory          = 8192
+request_disk            = 4096
+
+# Where logs land. (Paths are relative to the dir you condor_submit from,
+# i.e. the MG5 root, because that's where you run from per the comment above.)
+output                  = BDT_MC/condor/logs/signal.$(ClusterId).$(ProcId).out
+error                   = BDT_MC/condor/logs/signal.$(ClusterId).$(ProcId).err
+log                     = BDT_MC/condor/logs/signal.$(ClusterId).$(ProcId).log
+
+# Stream output so you can `tail -f` in real time (handy for an ~30 min job).
+stream_output           = True
+stream_error            = True
+
+# Keep the job alive long enough for 100k evts through PY8+Delphes.
+# 12h is generous; adjust if your local pool has a tighter limit.
++RequestRuntime         = 43200
+
+# OS requirement: the LCG view we source is built for el9.
+requirements            = (OpSysAndVer == "AlmaLinux9") || (OpSysAndVer == "CentOS9") || (OpSysAndVer == "RHEL9")
+
+# Send one job. (For background samples later, copy this file and change
+# the executable / arguments, or use `queue` over a list.)
+queue 1

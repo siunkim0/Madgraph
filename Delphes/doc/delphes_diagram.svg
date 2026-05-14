@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="820" height="1e3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+ <defs>
+  <marker id="Arrow1M" overflow="visible" markerHeight="5" markerWidth="8.75" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" refX="4.25" viewBox="0 0 8.75 5">
+   <path transform="scale(-.5)" d="m0 0 5-5-17.5 5 17.5 5z" fill="context-stroke" fill-rule="evenodd"/>
+  </marker>
+  <marker id="Arrow1L" overflow="visible" markerHeight="10" markerWidth="17.5" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" refX="10.5" viewBox="0 0 17.5 10">
+   <path transform="scale(-1)" d="m0 0 5-5-17.5 5 17.5 5z" fill="context-stroke" fill-rule="evenodd"/>
+  </marker>
+ </defs>
+ <rect x="160" y="130" width="620" height="600" ry="55" fill="#c5e0dc" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <path d="m470 100v27" fill="none" marker-end="url(#Arrow1L)" stroke="#000000"/>
+ <path d="m470 70v30" fill="none" stroke="#000000"/>
+ <path d="m610 70v30" fill="none" stroke="#000000"/>
+ <path d="m120 305h37" fill="none" marker-end="url(#Arrow1L)" stroke="#000000"/>
+ <ellipse cx="470" cy="155" rx="50" ry="15" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="470" y="160" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">reader</tspan></text>
+ <rect x="300" y="390" width="100" height="30" ry="15" fill="#f2d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="350" y="410" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">electrons</tspan></text>
+ <rect x="180" y="290" width="580" height="30" ry="15" fill="#f2d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="470" y="310" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">propagated stable particles</tspan></text>
+ <rect x="180" y="390" width="100" height="30" ry="15" fill="#f2d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="230" y="410" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">muons</tspan></text>
+ <rect x="210" y="440" width="40" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="230" y="460" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">ε</tspan></text>
+ <path d="m230 470v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m350 470v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m470 470v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <rect x="210" y="690" width="400" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="410" y="710" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">unique object finder</tspan></text>
+ <rect x="300" y="780" width="100" height="30" ry="15" fill="#e08e79" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="350" y="800" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">electrons</tspan></text>
+ <rect x="420" y="750" width="100" height="30" ry="15" fill="#e08e79" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="470" y="770" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">photons</tspan></text>
+ <rect x="540" y="780" width="100" height="30" ry="15" fill="#e08e79" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="590" y="800" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">jets</tspan></text>
+ <rect x="180" y="750" width="100" height="30" ry="15" fill="#e08e79" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="230" y="770" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">muons</tspan></text>
+ <rect x="660" y="750" width="100" height="30" ry="15" fill="#e08e79" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="710" y="770" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">MET</tspan></text>
+ <path d="m470 720v27" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m230 720v27" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m350 720v57" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m350 810c10 20 40 30 78 39" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m590 810c-10 20-40 30-78 39" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m710 780c0 30-90 80-187 85" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m230 780c0 30 90 80 187 85" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <rect x="700" y="20" width="100" height="50" ry="15" fill="#f1d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="750" y="50" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">LHEF</tspan></text>
+ <rect x="420" y="20" width="100" height="50" ry="15" fill="#f1d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="470" y="50" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">Pythia8</tspan></text>
+ <rect x="560" y="20" width="100" height="50" ry="15" fill="#f1d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="610" y="50" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">ProMC</tspan></text>
+ <rect x="550" y="540" width="80" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="590" y="560" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">FastJet</tspan></text>
+ <rect x="380" y="240" width="180" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="470" y="260" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">particle propagator</tspan></text>
+ <path d="m470 220v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <rect x="380" y="190" width="180" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="470" y="210" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">pile-up merger</tspan></text>
+ <path d="m470 170v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m120 205h37" fill="none" marker-end="url(#Arrow1L)" stroke="#000000"/>
+ <rect x="20" y="180" width="100" height="50" ry="15" fill="#f1d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="70" y="200" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">Pile-up</tspan><tspan sodipodi:role="line">file</tspan></text>
+ <rect x="420" y="850" width="100" height="50" ry="15" fill="#e08e79" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="470" y="880" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">ROOT</tspan></text>
+ <rect x="280" y="930" width="100" height="50" ry="15" fill="#e08e79" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="330" y="950" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">Analysis</tspan><tspan sodipodi:role="line">macros</tspan></text>
+ <rect x="560" y="930" width="100" height="50" ry="15" fill="#e08e79" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="610" y="950" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">Event</tspan><tspan sodipodi:role="line">display</tspan></text>
+ <rect x="420" y="930" width="100" height="50" ry="15" fill="#e08e79" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="470" y="960" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">LHCO</tspan></text>
+ <path d="m470 900v27" fill="none" marker-end="url(#Arrow1L)" stroke="#000000"/>
+ <path d="m420 885c-25 0-50 0-89 42" fill="none" marker-end="url(#Arrow1L)" stroke="#000000"/>
+ <path d="m520 885c25 0 50 0 89 42" fill="none" marker-end="url(#Arrow1L)" stroke="#000000"/>
+ <path d="m470 780v67" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <rect x="670" y="540" width="80" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="710" y="560" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">merger</tspan></text>
+ <path d="m590 720v57" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <rect x="210" y="490" width="400" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="410" y="510" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">pile-up subtractors</tspan></text>
+ <path d="m590 420v67" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <rect x="530" y="640" width="120" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="590" y="660" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">b-, τ-tagging</tspan></text>
+ <rect x="530" y="590" width="120" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="590" y="610" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">energy scale</tspan></text>
+ <path d="m230 320v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m710 570v177" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m190 70v30h560v-30" fill="none" stroke="#000000"/>
+ <rect x="210" y="540" width="280" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="350" y="560" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">isolation</tspan></text>
+ <path d="m230 520v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m350 520v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m470 520v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m590 570v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m590 620v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m590 520v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m590 670v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m230 570v117" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m350 570v117" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m470 570v117" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m710 420v117" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <rect x="20" y="280" width="100" height="50" ry="15" fill="#f1d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="70" y="300" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">Config</tspan><tspan sodipodi:role="line">file</tspan></text>
+ <path d="m470 270v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m590 320v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <rect x="420" y="390" width="100" height="30" ry="15" fill="#f2d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="470" y="410" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">photons</tspan></text>
+ <rect x="540" y="390" width="220" height="30" ry="15" fill="#f2d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="650" y="410" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">towers and tracks</tspan></text>
+ <path d="m470 370v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m590 370v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m710 370v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m350 370v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m230 420v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m350 420v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m470 420v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <rect x="330" y="340" width="400" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="530" y="360" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">calorimeter and energy flow</tspan></text>
+ <rect x="210" y="340" width="40" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="230" y="360" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">σ</tspan></text>
+ <path d="m230 370v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <rect x="280" y="20" width="100" height="50" ry="15" fill="#f1d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="330" y="50" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">HepMC</tspan></text>
+ <path d="m330 70v30" fill="none" stroke="#000000"/>
+ <path d="m350 320v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m470 320v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <path d="m710 320v17" fill="none" marker-end="url(#Arrow1M)" stroke="#000000"/>
+ <rect x="140" y="20" width="100" height="50" ry="15" fill="#f1d4af" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="190" y="40" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">StdHEP</tspan><tspan sodipodi:role="line">(XDR)</tspan></text>
+ <rect x="330" y="440" width="40" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="350" y="460" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">ε</tspan></text>
+ <rect x="450" y="440" width="40" height="30" ry="0" fill="#ffffff" opacity=".75" stroke="#000000" stroke-linejoin="round"/>
+ <text x="470" y="460" fill="#000000" font-family="Cambria" font-size="20px" text-align="center" text-anchor="middle" style="line-height:1.25"><tspan sodipodi:role="line">ε</tspan></text>
+ <g fill="#000000">
+  <path d="m698.91 211.34v5.99l1.02 0.13c0.53 0.1 1.77 0.11 2.73 0.11 1.47 0 1.86-0.1 2.73-0.49 1.44-0.73 2.89-2.22 3.66-3.75 0.53-1.11 0.61-1.43 0.5-2.18-0.23-1.68-1.88-4.01-3.7-5.22l-0.87-0.59h-6.07zm4.72-3.1c0.81 0.56 1.76 2.01 1.92 2.91 0.1 0.52 0 0.86-0.39 1.51-0.49 0.84-2.08 2.43-2.42 2.43-0.12 0-0.19-1.28-0.19-3.63 0-2.68 0.1-3.64 0.23-3.64 0.11 0 0.51 0.19 0.85 0.42z"/>
+  <path d="m757.88 208.24c-1.26 0.6-2.33 1.61-2.58 2.47-0.31 0.97 0.1 1.78 1.15 2.68 1.26 0.99 1.01 1.66-0.8 2.29-0.39 0.14-0.69 0.35-0.66 0.44 0 0.1 0.46 0.52 0.94 0.94 1.07 0.9 1.49 0.86 3.18-0.25 1.35-0.92 1.97-1.91 1.74-2.81-0.18-0.57-0.41-0.84-1.86-2.09-0.46-0.4-0.59-0.64-0.5-0.89 0.14-0.37 1.17-0.96 2.07-1.17l0.55-0.13-0.51-0.54c-0.27-0.28-0.82-0.71-1.23-0.92-0.71-0.4-0.71-0.4-1.49 0z"/>
+  <path d="m711.32 208.42c-0.1 0.1-0.15 1.28-0.13 2.77v4.45l-0.1 1.8h6.37l0.19-0.69c0.12-0.38 0.25-0.97 0.33-1.34 0.13-0.65 0.13-0.65-0.46-0.53-0.33 0.1-1.15 0.17-1.84 0.24l-1.24 0.14v-1.46l1.55 0.14 1.57 0.13-0.12-0.97c0-0.54-0.17-1.05-0.23-1.15 0-0.12-0.7-0.19-1.45-0.19h-1.32v-1.2l1.4 0.13c0.74 0.1 1.53 0.17 1.74 0.25 0.32 0.1 0.34 0 0.21-0.92-0.25-1.86 0-1.74-3.33-1.78-1.61 0-3 0-3.1 0.1z"/>
+  <path d="m720.87 208.38c-0.5 0.1-0.94 0.17-0.98 0.21 0 0.1-0.14 2.1-0.19 4.53l-0.12 4.45h5.91l0.31-0.72c0.15-0.38 0.34-0.99 0.4-1.36l0.11-0.65-0.74 0.12c-0.4 0.1-1.21 0.19-1.78 0.26l-1.03 0.12 0.11-3.56 0.12-3.57h-0.62c-0.34 0-1.01 0.1-1.5 0.15z"/>
+  <path d="m727.4 212.35c0 2.3 0 4.36-0.11 4.59-0.12 0.45-0.1 0.45 1.64 0.45h1.78l-0.11-1.23-0.12-1.24 1.02-0.29c1.33-0.4 2.77-1.39 3.21-2.26 0.32-0.61 0.34-0.8 0.15-1.5-0.29-1.06-1.38-2.17-2.39-2.45-0.42-0.12-1.74-0.21-2.91-0.21h-2.16zm4.19-1.39c0.5 0.54 0.37 0.98-0.38 1.36-0.29 0.15-0.58 0.28-0.65 0.28-0.1 0-0.1-0.51-0.1-1.12 0-1.02 0-1.13 0.37-1.04 0.21 0.1 0.55 0.29 0.76 0.52z"/>
+  <path d="m737.44 208.47-1.15 0.21v4.35c0 3.04 0 4.36 0.2 4.37 0.67 0.1 2.33-0.1 2.65-0.19 0.35-0.13 0.39-0.28 0.35-1.37 0-0.67-0.1-1.38-0.14-1.57-0.1-0.31 0-0.35 1.21-0.29l1.3 0.1 0.19 3.44 0.86-0.1c0.48 0 1.13-0.13 1.46-0.25l0.61-0.19 0.1-4.24c0-2.33 0-4.3-0.1-4.36-0.18-0.12-1.8 0-2.59 0.13-0.42 0.1-0.44 0.17-0.44 1.61v1.53h-2.44l-0.1-0.63v-1.72c0.12-1.26 0.15-1.25-1.97-0.83z"/>
+  <path d="m747.27 208.42c-0.1 0.1-0.15 1.28-0.14 2.77v4.45l-0.1 1.8h6.37l0.19-0.69c0.12-0.38 0.25-0.97 0.33-1.34 0.13-0.65 0.13-0.65-0.46-0.53-0.33 0.1-1.15 0.17-1.84 0.24l-1.24 0.14v-1.46l1.55 0.14 1.56 0.13-0.11-0.97c-0.1-0.54-0.17-1.05-0.23-1.15-0.1-0.12-0.71-0.19-1.45-0.19h-1.32v-1.2l1.39 0.13c0.75 0.1 1.53 0.17 1.74 0.25 0.33 0.1 0.35 0 0.21-0.92-0.24-1.86 0-1.74-3.32-1.78-1.61 0-3.01 0-3.1 0.1z"/>
+  <path d="m694.67 220.77c-0.44 0.19-0.71 0.71-0.79 1.58-0.1 0.77-0.1 0.79-0.45 0.79-0.34 0-0.38 0.1-0.38 0.47 0 0.42 0 0.46 0.39 0.46h0.4v3.42h-0.35c-0.31 0-0.39 0.1-0.41 0.46v0.44h2.92v-0.47c0-0.43 0-0.46-0.47-0.46h-0.46v-3.43h0.4c0.37 0 0.39 0 0.39-0.46 0-0.42 0-0.47-0.39-0.47h-0.4v-0.79c0-0.75 0-0.79 0.32-0.79 0.19 0 0.34 0.1 0.38 0.25 0 0.2 0.14 0.24 0.37 0.19 0.65-0.13 0.65-0.13 0.5-0.57-0.24-0.66-1.15-0.98-1.93-0.66z"/>
+  <path d="m719.77 221.13c-0.18 0.74 0.67 1.14 1.07 0.51 0.32-0.47 0.1-0.87-0.53-0.87-0.38 0-0.47 0-0.54 0.36z"/>
+  <path d="m738.34 221.23c0 0.44 0 0.46 0.46 0.46h0.46v5.81h-0.46c-0.44 0-0.46 0-0.46 0.46v0.47h2.77v-0.47c0-0.42 0-0.46-0.39-0.46h-0.4v-6.73h-1.98z"/>
+  <path d="m751.86 221.13c-0.19 0.74 0.66 1.14 1.07 0.51 0.31-0.47 0.1-0.87-0.53-0.87-0.38 0-0.48 0-0.54 0.36z"/>
+  <path d="m708.8 221.88c-0.42 0.37-0.57 0.61-0.57 0.88 0 0.32-0.1 0.38-0.32 0.38-0.3 0-0.33 0.1-0.33 0.47 0 0.41 0 0.46 0.33 0.46h0.32v1.48c0 2.36 0.28 3.01 1.26 3.01 0.7 0 0.86-0.12 0.86-0.61 0-0.42 0-0.45-0.47-0.45h-0.46v-3.43h0.46c0.44 0 0.47 0 0.47-0.46 0-0.44 0-0.47-0.47-0.47h-0.45v-1.78z"/>
+  <path d="m748.88 221.9c-0.38 0.33-0.51 0.56-0.51 0.85 0 0.33 0 0.39-0.33 0.39-0.29 0-0.33 0.1-0.33 0.47 0 0.41 0 0.46 0.33 0.46h0.33v1.78c0 1.02 0.1 1.9 0.15 2.09 0.24 0.51 0.92 0.74 1.67 0.54 0.23-0.1 0.29-0.18 0.29-0.53 0-0.41 0-0.43-0.48-0.47h-0.51v-3.37h0.54c0.51 0 0.52 0 0.52-0.46 0-0.45 0-0.47-0.52-0.47h-0.52v-1.7z"/>
+  <path d="m697.72 223.26c-0.49 0.23-0.97 0.7-0.97 0.96 0 0.1 0.21 0.13 0.46 0.17 0.36 0.1 0.53 0 0.75-0.19 0.2-0.18 0.46-0.26 0.9-0.26 0.82 0 1.07 0.21 1.16 0.99 0.1 0.59 0.1 0.63-0.18 0.53-1.14-0.48-2-0.4-2.64 0.25-0.53 0.52-0.67 1-0.47 1.66 0.2 0.69 0.8 1.08 1.66 1.16 0.56 0 0.75 0 1.17-0.29 0.61-0.41 0.62-0.41 0.62-0.1 0 0.24 0.1 0.27 0.94 0.27h0.92v-0.44c0-0.37-0.1-0.42-0.46-0.46h-0.44v-1.61c0-1.8-0.1-2.1-0.77-2.56-0.58-0.4-1.81-0.41-2.61-0.1zm1.93 2.96c0.24 0.12 0.33 0.28 0.33 0.54 0 0.78-1.42 1.31-2.01 0.74-0.35-0.33-0.39-0.87-0.1-1.21 0.25-0.29 1.25-0.33 1.75-0.1z"/>
+  <path d="m703.66 223.14c-0.6 0.19-1 0.69-1.06 1.38-0.1 0.55 0 0.63 0.38 1.05 0.41 0.42 1.16 0.75 1.73 0.75 0.47 0 1.15 0.38 1.15 0.64 0 0.69-1.47 0.94-2.05 0.34-0.18-0.17-0.33-0.4-0.33-0.52 0-0.15-0.13-0.2-0.46-0.2h-0.46v1.85h0.46c0.25 0 0.46-0.1 0.46-0.12 0-0.1 0.16 0 0.37 0.1 0.45 0.24 1.49 0.24 2.06 0 1.03-0.43 1.36-1.71 0.63-2.45-0.38-0.37-0.74-0.5-2.16-0.79-0.73-0.15-0.77-0.17-0.77-0.53 0-0.45 0.31-0.66 0.97-0.66 0.48 0 1.14 0.42 1.14 0.74 0 0.12 0.15 0.18 0.47 0.18h0.46v-1.73h-0.62c-0.36 0-0.93 0-1.3-0.1h-1.07z"/>
+  <path d="m714.88 223.26c-0.68 0.32-1.03 0.91-0.92 1.58 0.13 0.83 0.83 1.28 2.39 1.54 0.65 0.11 0.86 0.28 0.86 0.67 0 0.4-0.36 0.58-1.12 0.58-0.46 0-0.67-0.1-0.93-0.33-0.18-0.17-0.32-0.4-0.32-0.52 0-0.16-0.11-0.2-0.43-0.18l-0.43 0.1v1.78h0.47c0.25 0 0.47-0.1 0.47-0.13 0-0.1 0.17-0.1 0.39 0.1 0.21 0.11 0.66 0.2 0.99 0.2 1.52 0 2.47-1.03 1.98-2.18-0.23-0.59-0.8-0.92-1.9-1.12-1.11-0.21-1.33-0.33-1.33-0.73 0-0.38 0.34-0.59 0.96-0.59 0.49 0 1.15 0.42 1.15 0.74 0 0.12 0.14 0.18 0.46 0.18h0.47v-1.73h-0.63c-0.35 0-0.92 0-1.29-0.1-0.51-0.1-0.78 0-1.21 0.17z"/>
+  <path d="m725.33 223.17c-0.21 0.1-0.51 0.23-0.66 0.32-0.36 0.25-0.46 0.23-0.46-0.1 0-0.24-0.1-0.27-0.99-0.27h-0.99v0.47c0 0.43 0 0.46 0.46 0.46h0.46v3.43h-0.46c-0.44 0-0.46 0-0.46 0.46v0.47h2.9v-0.47c0-0.43 0-0.46-0.46-0.46h-0.46v-2.9l0.53-0.27c0.27-0.14 0.73-0.26 0.99-0.26 0.64 0 0.72 0.28 0.72 2.52v1.84h1.99v-0.47c0-0.43 0-0.46-0.47-0.46h-0.46v-2.9l0.44-0.27c0.29-0.18 0.6-0.26 1.01-0.23h0.6v4.29h1.98v-0.47c0-0.43 0-0.46-0.46-0.46h-0.46v-1.75c0-1.48 0-1.81-0.25-2.15-0.42-0.69-1.56-0.72-2.59-0.1-0.4 0.25-0.4 0.25-0.74-0.1-0.41-0.37-1.19-0.5-1.77-0.28z"/>
+  <path d="m743.09 223.23c-0.53 0.22-1.06 0.68-1.06 0.91 0 0.3 0.8 0.35 1.15 0.1 0.47-0.36 1.49-0.37 1.81 0 0.21 0.24 0.46 1.33 0.32 1.33 0 0-0.29-0.1-0.54-0.2-0.62-0.25-1.3-0.25-1.84 0-1.29 0.62-1.34 2.39-0.1 3.03 0.55 0.28 1.58 0.19 2.11-0.2 0.38-0.27 0.38-0.27 0.38 0 0 0.24 0.1 0.27 0.93 0.27h0.92v-0.47c0-0.42 0-0.46-0.38-0.46h-0.38l-0.1-1.69c-0.1-1.83-0.15-2.14-0.8-2.53-0.51-0.32-1.8-0.35-2.47-0.1zm1.86 3.03c0.32 0.16 0.4 0.28 0.36 0.54-0.1 0.72-1.38 1.2-2.02 0.78-0.4-0.26-0.45-0.91-0.11-1.29 0.27-0.3 1.22-0.32 1.77 0z"/>
+  <path d="m756.09 223.26c-1.97 0.9-2.17 3.69-0.35 4.9 1.75 1.17 4.04 0.11 4.33-2 0.22-1.67-1.07-3.14-2.79-3.14-0.35 0-0.89 0.11-1.19 0.24zm1.97 0.94c0.48 0.17 0.88 0.89 0.88 1.56 0 1.4-1.25 2.27-2.39 1.68-1.1-0.58-1.23-2.46-0.23-3.16 0.33-0.24 1.24-0.28 1.74-0.1z"/>
+  <path d="m764.08 223.13c-0.18 0.1-0.53 0.2-0.75 0.32-0.54 0.28-0.56 0.28-0.56 0 0-0.24-0.1-0.27-1-0.27h-0.99v0.47c0 0.43 0 0.46 0.47 0.46h0.46v3.43h-0.46c-0.44 0-0.47 0-0.47 0.46v0.47h2.91v-0.47c0-0.43 0-0.46-0.47-0.46h-0.45v-2.9l0.52-0.27c0.68-0.34 1.4-0.35 1.59 0 0.1 0.15 0.13 1.11 0.13 2.18v1.93h1.98v-0.47c0-0.43 0-0.46-0.45-0.46h-0.45l-0.1-1.84c0-1.77-0.1-1.87-0.39-2.19-0.35-0.36-1.04-0.51-1.57-0.34z"/>
+  <path d="m719.06 223.61c0 0.42 0 0.46 0.4 0.46h0.39v3.43h-0.39c-0.37 0-0.4 0-0.4 0.46v0.47h2.64v-0.47c0-0.42 0-0.46-0.39-0.46h-0.4v-4.36h-1.85z"/>
+  <path d="m732 223.61c0 0.42 0 0.46 0.4 0.46h0.39v3.72l0.38 0.39c0.51 0.48 1.29 0.51 2.17 0.1 0.58-0.29 0.62-0.29 0.62-0.1 0 0.22 0.11 0.25 0.99 0.25h0.99v-0.47c0-0.43 0-0.46-0.46-0.46h-0.46v-4.36h-1.98v0.47c0 0.43 0 0.46 0.46 0.46h0.47v1.47c0 1.39 0 1.49-0.37 1.73-0.43 0.31-1.25 0.45-1.51 0.23-0.16-0.13-0.2-0.55-0.2-2.26v-2.1h-1.89z"/>
+  <path d="m751.15 223.61c0 0.42 0 0.46 0.39 0.46h0.4v3.43h-0.4c-0.37 0-0.39 0-0.39 0.46v0.47h2.64v-0.47c0-0.42 0-0.46-0.4-0.46h-0.4v-4.36h-1.84z"/>
+ </g>
+ <circle cx="730" cy="180.15" r="23.706" fill="#000000" stroke="#000000" stroke-width="0"/>
+ <circle cx="730" cy="180.15" r="22.224" fill="none" stroke="#ffffff" stroke-width="1.111"/>
+ <circle cx="730" cy="180.15" r="20.742" fill="none" stroke="#000000" stroke-width="0"/>
+ <path d="m714.45 193.49 1.48 1.48h28.15l1.48-1.48z" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+ <path d="m716.67 195.71h26.67l-1.85 1.48h-22.97z" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+ <path d="m719.63 197.93h20.74c-7.77 3.71-12.96 3.71-20.74 0z" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+ <path d="m718.89 192.75 0.74-20.01-1.48-1.48v-1.48h5.93v1.48l-1.48 1.48 0.74 20.01z" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+ <path d="m736.67 192.75 0.74-20.01-1.48-1.48v-1.48h5.93v1.48l-1.49 1.48 0.75 20.01z" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+ <path d="m727.78 192.75 0.74-20.01-1.48-1.48v-1.48h5.93v1.48l-1.49 1.48 0.75 20.01z" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+ <rect x="720.37" y="166.82" width="19.261" height="2.2224" ry="0" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+ <rect x="723.34" y="163.85" width="13.334" height="2.2224" ry="0" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+ <rect x="721.85" y="161.63" width="16.298" height="1.4816" ry="0" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+ <rect x="726.3" y="160.15" width="1.4816" height="1.4816" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+ <rect x="732.23" y="160.15" width="1.4816" height="1.4816" fill="#ffffff" stroke="#000000" stroke-width="0"/>
+</svg>
