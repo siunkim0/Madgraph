@@ -1,4 +1,4 @@
-# Monte Carlo Signal and Background Sample Generation for H → ZZ → 4μ Analysis
+# How to make Monte Carlo Sample for CMS analysis using Madgraph
 
 End-to-end pipeline for generating Monte Carlo samples using MadGraph5_aMC@NLO + Pythia8 + Delphes, with conversion to NanoAOD-compatible ROOT files for downstream physics analysis.
 
