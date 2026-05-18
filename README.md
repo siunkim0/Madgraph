@@ -103,6 +103,7 @@ source /path/to/ROOT/bin/thisroot.sh
 # Any sample (signal or background)
 ./run_sample.sh ZZto4L
 ./run_sample.sh DYJetsToLL_M-50
+./run_sample.sh DYJetsToLL_M-10to50
 ./run_sample.sh VBFHToZZTo4L
 ./run_sample.sh VHToNonbb
 ```

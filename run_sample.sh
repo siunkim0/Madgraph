@@ -38,6 +38,15 @@ PROC_CARD="${SCRIPT_DIR}/cards/${SAMPLE}_proc.dat"
 LAUNCH_CARD="${SCRIPT_DIR}/cards/${SAMPLE}_launch.txt"
 PROC_DIR="${SCRIPT_DIR}/output/${SAMPLE}"
 
+# Source local overrides if present (gitignored)
+if [[ -f "${SCRIPT_DIR}/local.conf" ]]; then
+    # shellcheck disable=SC1091
+    source "${SCRIPT_DIR}/local.conf"
+fi
+
+# Defaults (can be overridden in local.conf)
+CONVERTER_SCRIPT="${CONVERTER_SCRIPT:-${SCRIPT_DIR}/scripts/delphes_to_nano.py}"
+
 if [[ ! -f "${PROC_CARD}" ]]; then
     echo "ERROR: process card not found: ${PROC_CARD}" >&2
     exit 1
@@ -103,11 +112,11 @@ if [[ ! -f "${DELPHES_OUT}" ]]; then
 fi
 
 RUN_TAG=$(basename "${RUN_DIR}")
-NANO_OUT="${PROC_DIR}/nano/${SAMPLE}_${RUN_TAG}.root"
+NANO_OUT="${NANO_OUTPUT_DIR:-${PROC_DIR}/nano/${SAMPLE}_${RUN_TAG}.root}"
 mkdir -p "$(dirname "${NANO_OUT}")"
 
 echo "[3/3] Converting ${DELPHES_OUT} -> ${NANO_OUT}"
-python3 "${SCRIPT_DIR}/scripts/delphes_to_nano.py" \
+python3 "${CONVERTER_SCRIPT}" \
     --in  "${DELPHES_OUT}" \
     --out "${NANO_OUT}" \
     --label 1

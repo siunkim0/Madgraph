@@ -18,9 +18,19 @@ set -euo pipefail
 
 # --- Auto-detect paths ----------------------------------------------------
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PROC_DIR="${SCRIPT_DIR}/output/ggH_ZZ_4mu"
+SAMPLE="ggH_ZZ_4mu"
+PROC_DIR="${SCRIPT_DIR}/output/${SAMPLE}"
 RUN_DIR="${PROC_DIR}/Events/run_01"
-NANO_OUT="${PROC_DIR}/nano/ggH_ZZ_4mu.root"
+
+# Source local overrides if present (gitignored)
+if [[ -f "${SCRIPT_DIR}/local.conf" ]]; then
+    # shellcheck disable=SC1091
+    source "${SCRIPT_DIR}/local.conf"
+fi
+
+# Defaults (can be overridden in local.conf)
+CONVERTER_SCRIPT="${CONVERTER_SCRIPT:-${SCRIPT_DIR}/scripts/delphes_to_nano.py}"
+NANO_OUT="${NANO_OUTPUT_DIR:-${PROC_DIR}/nano/${SAMPLE}.root}"
 
 # Find MadGraph5
 if [[ -n "${MG5_ROOT:-}" ]] && [[ -x "${MG5_ROOT}/bin/mg5_aMC" ]]; then
@@ -66,10 +76,11 @@ fi
 
 echo "[3/3] Converting ${DELPHES_OUT} -> ${NANO_OUT}"
 mkdir -p "$(dirname "${NANO_OUT}")"
-python3 "${SCRIPT_DIR}/scripts/delphes_to_nano.py" \
+python3 "${CONVERTER_SCRIPT}" \
     --in  "${DELPHES_OUT}" \
     --out "${NANO_OUT}" \
     --label 1
 
 echo
 echo "Done. Output: ${NANO_OUT}"
+

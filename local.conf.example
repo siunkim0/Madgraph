@@ -1,0 +1,11 @@
+# local.conf — Local overrides for run_signal.sh / run_sample.sh.
+# Copy this file to "local.conf" and edit as needed.
+# local.conf is gitignored and will not be committed.
+
+# Override the NanoAOD output directory.
+# The scripts replace ${SAMPLE} with the sample name at runtime.
+# Default (if unset): output/<sample>/nano/
+#NANO_OUTPUT_DIR="/your/custom/path/${SAMPLE}"
+
+# Override the converter script (default: scripts/delphes_to_nano.py).
+#CONVERTER_SCRIPT="${SCRIPT_DIR}/scripts/delphes_to_sknano.py"
