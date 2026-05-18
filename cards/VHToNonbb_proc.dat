@@ -1,0 +1,21 @@
+# MadGraph5 process card: VH associated production (inclusive H decay)
+#
+# WH and ZH associated Higgs production. The Higgs decay is handled by
+# Pythia8 (all channels, including H -> bb). To match the CMS "VHToNonbb"
+# sample, apply an H -> nonbb selection downstream in the analysis, or
+# modify the pythia8_card to exclude H -> bb:
+#   25:onMode = on
+#   25:offIfMatch = 5 -5
+#
+# CMS reference xsec: 1.0132 pb (VH, H->nonbb, SMP-24-001)
+# This xsec already includes BR(H->nonbb) ~ 42%.
+# MG5 will report sigma(VH) total; multiply by BR(H->nonbb) for normalization.
+#
+# Run with:
+#   ./bin/mg5_aMC cards/VHToNonbb_proc.dat
+
+import model sm
+generate p p > w+ h
+add process p p > w- h
+add process p p > z h
+output output/VHToNonbb -nojpeg

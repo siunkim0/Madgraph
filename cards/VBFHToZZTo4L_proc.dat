@@ -1,0 +1,19 @@
+# MadGraph5 process card: VBF H -> ZZ -> 4l
+#
+# Vector boson fusion Higgs production with H -> ZZ -> 4l decay.
+# QCD<=0 ensures only electroweak vertices (VBF topology), excluding
+# QCD-mediated diagrams. The SM model is used (VBF is tree-level EW,
+# no HEFT needed unlike ggH).
+#
+# CMS reference xsec: 0.00112 pb (HIG-24-013, powheg+JHUGen NLO)
+# MG5 will compute the LO cross section.
+#
+# Run with:
+#   ./bin/mg5_aMC cards/VBFHToZZTo4L_proc.dat
+
+import model sm
+define l+ = e+ mu+ ta+
+define l- = e- mu- ta-
+define j = g u c d s u~ c~ d~ s~ b b~
+generate p p > h j j QCD<=0, h > z z, z > l+ l-
+output output/VBFHToZZTo4L -nojpeg

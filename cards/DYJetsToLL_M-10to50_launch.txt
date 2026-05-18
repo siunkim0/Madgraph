@@ -1,0 +1,21 @@
+# Launch script for Drell-Yan (10 < M < 50 GeV) background generation.
+#
+# Run with (after the process directory has been generated):
+#   ./bin/mg5_aMC -f cards/DYJetsToLL_M-10to50_launch.txt
+
+launch output/DYJetsToLL_M-10to50
+shower=Pythia8
+detector=Delphes
+done
+# run_card edits:
+set nevents 500000
+set ebeam1 6800.0
+set ebeam2 6800.0
+set pdlabel nn23lo1
+set lhaid 230000
+# Dilepton mass window: 10 < M(ll) < 50 GeV
+set mmll 10.0
+set mmllmax 50.0
+# Use the ready-made CMS Delphes card
+set delphes_card delphes_card_CMS
+done

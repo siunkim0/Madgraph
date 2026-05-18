@@ -1,0 +1,21 @@
+# Launch script for VBF H -> ZZ -> 4l generation.
+#
+# Run with (after the process directory has been generated):
+#   ./bin/mg5_aMC -f cards/VBFHToZZTo4L_launch.txt
+
+launch output/VBFHToZZTo4L
+shower=Pythia8
+detector=Delphes
+done
+# run_card edits:
+set nevents 250000
+set ebeam1 6800.0
+set ebeam2 6800.0
+set pdlabel nn23lo1
+set lhaid 230000
+# param_card edits: SM Higgs at mH = 125 GeV
+set mh 125.0
+set wh auto
+# Use the ready-made CMS Delphes card
+set delphes_card delphes_card_CMS
+done

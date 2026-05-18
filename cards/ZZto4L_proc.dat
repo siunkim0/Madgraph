@@ -1,0 +1,17 @@
+# MadGraph5 process card: qq -> ZZ -> 4l (irreducible background)
+#
+# Continuum ZZ production via quark-antiquark annihilation.
+# Forces both Z bosons to decay to charged leptons (e, mu, tau).
+# This is the main irreducible background for the H -> ZZ -> 4l analysis.
+#
+# CMS reference xsec: 1.529 pb (HIG-24-013, powheg NLO)
+# MG5 will compute the LO cross section (~1.3 pb).
+#
+# Run with:
+#   ./bin/mg5_aMC cards/ZZto4L_proc.dat
+
+import model sm
+define l+ = e+ mu+ ta+
+define l- = e- mu- ta-
+generate p p > z z, z > l+ l-
+output output/ZZto4L -nojpeg

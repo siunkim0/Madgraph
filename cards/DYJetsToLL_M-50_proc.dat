@@ -1,0 +1,17 @@
+# MadGraph5 process card: Drell-Yan pp -> Z/gamma* -> l+l- (M > 50 GeV)
+#
+# Inclusive Drell-Yan production with dilepton invariant mass above 50 GeV.
+# The mmll cut is applied via the run_card in the launch script.
+# Additional jets come from the Pythia8 parton shower (LO + PS).
+#
+# CMS reference xsec: 6345.99 pb (FEWZ NNLO, SMP-22-017)
+# MG5 LO will give a lower value (~5000 pb); use the CMS ref for normalization.
+#
+# Run with:
+#   ./bin/mg5_aMC cards/DYJetsToLL_M-50_proc.dat
+
+import model sm
+define l+ = e+ mu+ ta+
+define l- = e- mu- ta-
+generate p p > l+ l-
+output output/DYJetsToLL_M-50 -nojpeg

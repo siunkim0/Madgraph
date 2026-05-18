@@ -56,10 +56,21 @@ delphes_path = ./Delphes
 ```
 .
 ├── README.md                                      ← this file
-├── run_signal.sh                                  ← full-chain driver script
+├── run_signal.sh                                  ← signal-only driver script
+├── run_sample.sh                                  ← generic driver (any sample)
 ├── cards/
-│   ├── ggH_ZZ_4mu_proc.dat                        ← MG5 process card
-│   └── ggH_ZZ_4mu_launch.txt                      ← MG5 launch script (run_card overrides)
+│   ├── ggH_ZZ_4mu_proc.dat                        ← signal process card
+│   ├── ggH_ZZ_4mu_launch.txt                      ← signal launch script
+│   ├── ZZto4L_proc.dat                            ← ZZ → 4l background
+│   ├── ZZto4L_launch.txt
+│   ├── DYJetsToLL_M-50_proc.dat                   ← Drell-Yan M > 50
+│   ├── DYJetsToLL_M-50_launch.txt
+│   ├── DYJetsToLL_M-10to50_proc.dat               ← Drell-Yan 10 < M < 50
+│   ├── DYJetsToLL_M-10to50_launch.txt
+│   ├── VBFHToZZTo4L_proc.dat                      ← VBF Higgs → ZZ → 4l
+│   ├── VBFHToZZTo4L_launch.txt
+│   ├── VHToNonbb_proc.dat                         ← VH associated (H → nonbb)
+│   └── VHToNonbb_launch.txt
 ├── scripts/
 │   └── delphes_to_sknano.py                          ← Delphes → NanoAOD converter
 ├── condor/
@@ -67,13 +78,13 @@ delphes_path = ./Delphes
 │   ├── run_signal.sub                              ← HTCondor submit description
 │   └── README.md                                   ← Condor-specific instructions
 └── output/
-    └── ggH_ZZ_4mu/                                 ← created by MG5 on first run
+    └── <sample_name>/                              ← created by MG5 on first run
         ├── Events/run_01/
         │   ├── unweighted_events.lhe.gz
         │   ├── tag_1_pythia8_events.hepmc.gz
         │   └── tag_1_delphes_events.root           ← Delphes output
         └── nano/
-            └── ggH_ZZ_4mu.root                     ← final NanoAOD-style output
+            └── <sample_name>_run_01.root           ← final NanoAOD-style output
 ```
 
 ---
@@ -85,13 +96,21 @@ From the repository root:
 ```bash
 export MG5_ROOT=/path/to/MG5_aMC_v3_5_6
 source /path/to/ROOT/bin/thisroot.sh
+
+# Signal only
 ./run_signal.sh
+
+# Any sample (signal or background)
+./run_sample.sh ZZto4L
+./run_sample.sh DYJetsToLL_M-50
+./run_sample.sh VBFHToZZTo4L
+./run_sample.sh VHToNonbb
 ```
 
 The driver executes three stages:
-1. **Process directory generation** (once) — runs MG5 on `cards/ggH_ZZ_4mu_proc.dat`, producing Fortran matrix element code in `output/ggH_ZZ_4mu/`.
-2. **Event generation** — runs MG5 in script mode with `cards/ggH_ZZ_4mu_launch.txt`, enabling Pythia8 showering and Delphes detector simulation with `delphes_card_CMS.tcl`.
-3. **NanoAOD conversion** — converts the Delphes ROOT output to a NanoAOD-compatible flat tree under `output/ggH_ZZ_4mu/nano/`.
+1. **Process directory generation** (once) — runs MG5 on `cards/<sample>_proc.dat`, producing Fortran matrix element code in `output/<sample>/`.
+2. **Event generation** — runs MG5 in script mode with `cards/<sample>_launch.txt`, enabling Pythia8 showering and Delphes detector simulation with `delphes_card_CMS.tcl`.
+3. **NanoAOD conversion** — converts the Delphes ROOT output to a NanoAOD-compatible flat tree under `output/<sample>/nano/`.
 
 ### Step-by-step execution
 
@@ -159,19 +178,30 @@ Several branches are filled with pass-through defaults because Delphes does not 
 
 ---
 
-## Background Samples
+## Signal and Background Samples
 
-The same pipeline applies to background processes. The process card is modified as follows:
+Pre-configured process and launch cards are provided for the signal and all major backgrounds. Run any sample with:
+```bash
+./run_sample.sh <sample_name>
+```
 
-| Sample | Process card key lines |
-|--------|------------------------|
-| `qqZZ_4mu` | `import model sm` <br> `generate p p > z z, z > mu+ mu-` |
-| `DY_M50` | `import model sm` <br> `generate p p > mu+ mu-` <br> set `mmll > 50` in run_card |
-| `TTto2L2Nu` | `import model sm` <br> `generate p p > t t~, (t > b mu+ vm), (t~ > b~ mu- vm~)` |
+| Sample | Process | Events | CMS ref xsec (pb) | Reference |
+|--------|---------|--------|--------------------|-----------|
+| `ggH_ZZ_4mu` | `g g > h > z z, z > mu+ mu-` (HEFT) | 100k | 0.01434 | HIG-24-013 |
+| `ZZto4L` | `p p > z z, z > l+ l-` | 500k | 1.529 | HIG-24-013 |
+| `DYJetsToLL_M-50` | `p p > l+ l-` (M > 50) | 500k | 6345.99 | SMP-22-017 |
+| `DYJetsToLL_M-10to50` | `p p > l+ l-` (10 < M < 50) | 500k | 19982.5 | NLO→NNLO scaled |
+| `VBFHToZZTo4L` | `p p > h j j QCD<=0, h > z z, z > l+ l-` | 250k | 0.00112 | HIG-24-013 |
+| `VHToNonbb` | `p p > w+/w-/z h` (inclusive H decay) | 500k | 1.0132 | SMP-24-001 |
 
-For each sample, copy `cards/ggH_ZZ_4mu_proc.dat` and `cards/ggH_ZZ_4mu_launch.txt`, modify the `generate` line and `output` directory, run the driver, and convert the Delphes output.
+Cross sections listed are the CMS reference values (NLO/NNLO) used for luminosity normalization. MadGraph computes LO cross sections which will differ; use the CMS reference values when weighting events to a target luminosity via `weight = xsec_ref * lumi / sum(genWeights)`.
 
-**Note:** Drell-Yan and tt̄ backgrounds produce four-muon final states only through jet → μ fakes, which Delphes models poorly. This is a fundamental limitation of fast detector simulation for the H → ZZ → 4μ analysis.
+### Notes on specific samples
+
+- **ZZto4L**: Main irreducible background. Inclusive in lepton flavor (e, mu, tau).
+- **DYJets**: Drell-Yan produces only 2 leptons at matrix element level; additional leptons arise from jet fakes, which Delphes models poorly. This is a fundamental limitation of fast detector simulation.
+- **VBFHToZZTo4L**: Uses `QCD<=0` to select only electroweak (VBF) diagrams. Uses the SM model (no HEFT needed since VBF is tree-level EW).
+- **VHToNonbb**: Generates WH and ZH inclusively; Pythia8 handles all H decays. The CMS reference xsec (1.0132 pb) already includes BR(H→nonbb). To exclude H→bb at generation level, add `25:offIfMatch = 5 -5` to the pythia8 card.
 
 ---
 
@@ -229,10 +259,11 @@ print('m4l mean=%.1f  median=%.1f  GeV (expect ~125)' %
 
 | File | Description |
 |------|-------------|
-| `cards/ggH_ZZ_4mu_proc.dat` | MG5 process generation card |
-| `cards/ggH_ZZ_4mu_launch.txt` | Runtime launch script (executed via `./bin/mg5_aMC -f`) |
-| `scripts/delphes_to_sknano.py` | Delphes → NanoAOD converter (standalone: `--in / --out`) |
-| `run_signal.sh` | Full-chain driver; skips process generation if `output/` exists |
+| `run_signal.sh` | Signal-only driver (ggH → ZZ → 4μ) |
+| `run_sample.sh` | Generic driver for any sample: `./run_sample.sh <name>` |
+| `cards/*_proc.dat` | MG5 process generation cards (one per sample) |
+| `cards/*_launch.txt` | MG5 launch scripts with run parameters |
+| `scripts/delphes_to_nano.py` | Delphes → NanoAOD converter (standalone: `--in / --out`) |
 | `condor/` | HTCondor batch submission files (see `condor/README.md`) |
 
 ## Author
