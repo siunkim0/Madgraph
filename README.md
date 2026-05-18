@@ -129,7 +129,6 @@ unset PYTHIA8DATA
 
 # (c) Convert Delphes output to NanoAOD format
 python3 /path/to/repo/scripts/delphes_to_sknano.py \
-    --example /path/to/example/NANOAOD.root \
     --delphes output/ggH_ZZ_4mu/Events/run_01/tag_1_delphes_events.root \
     --out     output/ggH_ZZ_4mu/nano/NANOAOD_1.root
 ```
